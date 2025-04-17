@@ -13,7 +13,11 @@ const commandRoutes = require('./routes/commandRoutes');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*',  // During development; you can restrict this later
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -29,7 +33,9 @@ app.use('/api/commands', commandRoutes);
 app.get('/', (req, res) => {
   res.json({ message: 'APCS API is running...' });
 });
-
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', message: 'APCS API is running...' });
+});
 // Error handling
 app.use(notFound);
 app.use(errorHandler);
