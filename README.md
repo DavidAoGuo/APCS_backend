@@ -83,7 +83,7 @@ npm install
 ```
 NODE_ENV=development
 PORT=5000
-MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority
+MONGO_URI= your_connection_string
 JWT_SECRET=your_jwt_secret_key_here
 JWT_EXPIRES_IN=1d
 JWT_REFRESH_SECRET=your_refresh_token_secret_here
@@ -91,7 +91,7 @@ JWT_REFRESH_EXPIRES_IN=7d
 MQTT_BROKER=mqtt://test.mosquitto.org
 ```
 
-For MongoDB Atlas, replace the MONGO_URI with your connection string. A MongoDB Atlas connection string looks like this: `mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority`
+For MongoDB Atlas, replace the MONGO_URI with your connection string.
 
 4. Start the server:
 ```bash
