@@ -9,7 +9,7 @@ class MqttService {
     this.client = null;
     this.connected = false;
     // Use the same broker as the hardware team is using now
-    this.brokerUrl = 'mqtt://test.mosquitto.org';
+    this.brokerUrl = 'mqtt://broker.hivemq.com:1883';
     this.c2sTopic = '/seniorDesign/c2s'; // Client to server (hardware to our backend)
     this.s2cTopic = '/seniorDesign/s2c'; // Server to client (our backend to hardware)
   }
